@@ -8,7 +8,7 @@ const useFetch = (url) => {
 		const abortCont = new AbortController();
 
 		setTimeout(() =>{
-				fetch(url, {signal: abortCont}).then(res => {
+				fetch(url, {signal: abortCont.signal}).then(res => {
 				if (!res.ok){
 					throw Error('could not fetch the data for that resources')
 				}
